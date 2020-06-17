@@ -10,8 +10,8 @@
         android:id="@+id/textEstatistica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Estatística Mensal"
+        android:layout_marginTop="16dp"
+        android:text="Estatística Doações"
         android:textColor="#4CAF50"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,26 +20,27 @@
 
     <TextView
         android:id="@+id/metas"
-        android:layout_width="275dp"
-        android:layout_height="83dp"
-        android:layout_marginTop="36dp"
-        android:text="Doações Abril                                                                                             Cestas Básicas ------------------------------------ 42 Medicamentos ----------------------------------- 125 Agasalhos ------------------------------------------- 41"
+        android:layout_width="148dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="20dp"
+        android:text="Alimentos"
         android:textAlignment="textStart"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.273"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textEstatistica" />
 
     <TextView
         android:id="@+id/doacaoAtual"
-        android:layout_width="275dp"
-        android:layout_height="83dp"
-        android:layout_marginTop="36dp"
-        android:text="Doações Realizadas                                                                                        Cestas Básicas ------------------------------------ 42 Medicamentos ----------------------------------- 125 Agasalhos ------------------------------------------- 41"
+        android:layout_width="146dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="12dp"
+        android:text="EPI's"
         android:textAlignment="textStart"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.271"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/metas" />
 
@@ -47,10 +48,11 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         android:background="#8DBF8F"
-        android:onClick="voltar"
+        android:onClick="tela2"
         android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
@@ -59,11 +61,104 @@
         android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/doacaoAtual"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
         app:srcCompat="@drawable/estatistica" />
+
+    <TextView
+        android:id="@+id/txtRoupas"
+        android:layout_width="152dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="12dp"
+        android:text="Roupas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doacaoAtual" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="147dp"
+        android:layout_height="22dp"
+        android:text="Medicamentos"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRoupas"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <TextView
+        android:id="@+id/qtdAlimentos"
+        android:layout_width="61dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/qtdEpis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintStart_toEndOf="@+id/metas"
+        app:layout_constraintTop_toBottomOf="@+id/textEstatistica"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/qtdEpis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toEndOf="@+id/doacaoAtual"
+        tools:layout_editor_absoluteY="103dp" />
+
+    <TextView
+        android:id="@+id/qtdRoupas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toEndOf="@+id/txtRoupas"
+        app:layout_constraintTop_toBottomOf="@+id/qtdEpis" />
+
+    <TextView
+        android:id="@+id/QtdMed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/qtdTotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/qtdRoupas"
+        app:layout_constraintVertical_bias="0.487" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Doações Totais"
+        app:layout_constraintTop_toBottomOf="@+id/txtRoupas"
+        tools:layout_editor_absoluteX="72dp" />
+
+    <TextView
+        android:id="@+id/qtdTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginBottom="28dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toEndOf="@+id/textView18" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

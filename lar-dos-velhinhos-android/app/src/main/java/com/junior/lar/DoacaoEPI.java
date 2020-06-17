@@ -30,6 +30,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoacaoEPI extends AppCompatActivity {
+    private int contador = 0;
+
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +68,7 @@ public class DoacaoEPI extends AppCompatActivity {
             toast.setGravity(Gravity.CENTER_VERTICAL, 0,0);
             toast.show();
         } else {
+            contador++;
             int cont = listView.getCount();
             for (int i = 0; i < cont; i++) {
                 Epi epi = (Epi) listView.getItemAtPosition(i);
