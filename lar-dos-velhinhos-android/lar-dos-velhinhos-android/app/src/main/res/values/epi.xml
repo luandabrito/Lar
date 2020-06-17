@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="epi">
-        <item>Não selecionado</item>
-        <item>Mascara</item>
-        <item>Luvas descartaveis</item>
-        <item>Macacão Descartavel</item>
-    </string-array>
-</resources>

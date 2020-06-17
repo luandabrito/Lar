@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="roupas">
+        <item>Não selecionado</item>
+        <item>Blusa</item>
+        <item>Calca</item>
+        <item>Meia</item>
+        <item>camisa</item>
+        <item>cueca</item>
+        <item>calcinha</item>
+        <item>shorte</item>
+        <item>sapato</item>
+        <item>sandalia</item>
+        <item>bota</item>
+    </string-array>
+
+</resources>
