@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="#8DBF8F"
-        android:onClick="tela2"
+        android:onClick="voltar"
         android:text="Voltar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
