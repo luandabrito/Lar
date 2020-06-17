@@ -49,13 +49,49 @@ public class DoacaoRoupas extends AppCompatActivity {
     }
 
     public void confirmarDoacao(View v) {
-        Context context = getApplicationContext();
-        CharSequence text = "Agradecemos sua Doação de Roupas!";
-        int duration = Toast.LENGTH_LONG;
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        toast.show();
-        finish();
+        ListView listView = (ListView) findViewById(R.id.listaRoupas);
+
+        if (listView.getCount() == 0){
+            Context context = getApplicationContext();
+            CharSequence text = "Lista de doação vazia";
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0,0);
+            toast.show();
+        } else {
+            int cont = listView.getCount();
+            for (int i = 0; i < cont; i++) {
+                Roupas roupas = (Roupas) listView.getItemAtPosition(i);
+                if (roupas == null) {
+                    break;
+                }
+                RequestQueue queue = Volley.newRequestQueue(this);
+                String url = "http://192.168.15.12:8181/roupas/" + roupas.getId();
+                StringRequest stringRequest = new StringRequest(Request.Method.DELETE, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                tratarRespostaExcluirOK();
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                tratarErro(error.getMessage());
+                            }
+                        });
+                queue.add(stringRequest);
+            }
+
+            Context context = getApplicationContext();
+            CharSequence text = "Agradecemos sua Doação de Roupas!";
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.show();
+
+            finish();
+        }
     }
 
     public void incluirRoupa(View v) {
@@ -180,28 +216,29 @@ public class DoacaoRoupas extends AppCompatActivity {
         if (checked.size() == 0) {
             return;
         }
-        int position = checked.keyAt(0);
-        Roupas roupas = (Roupas) listView.getItemAtPosition(position);
-        if (roupas == null) {
-            return;
+        for (int i = 0; i < checked.size(); i++){
+            int position = checked.keyAt(i);
+            Roupas roupas = (Roupas) listView.getItemAtPosition(position);
+            if (roupas == null) {
+                break;
+            }
+            RequestQueue queue = Volley.newRequestQueue(this);
+            String url = "http://192.168.15.12:8181/roupas/" + roupas.getId();
+            StringRequest stringRequest = new StringRequest(Request.Method.DELETE, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            tratarRespostaExcluirOK();
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            tratarErro(error.getMessage());
+                        }
+                    });
+            queue.add(stringRequest);
         }
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://192.168.15.12:8181/roupas/" + roupas.getId();
-        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        tratarRespostaExcluirOK();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        tratarErro(error.getMessage());
-                    }
-                });
-        queue.add(stringRequest);
 
     }
 

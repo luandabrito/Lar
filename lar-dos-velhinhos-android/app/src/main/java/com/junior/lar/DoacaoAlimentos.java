@@ -49,13 +49,50 @@ public class DoacaoAlimentos extends AppCompatActivity {
     }
 
     public void confirmarDoacao(View v){
-        Context context = getApplicationContext();
-        CharSequence text = "Agradecemos sua Doação de Alimentos!";
-        int duration = Toast.LENGTH_LONG;
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0,0);
-        toast.show();
-        finish();
+
+        ListView listView = (ListView) findViewById(R.id.listaalimentos);
+
+        if (listView.getCount() == 0){
+            Context context = getApplicationContext();
+            CharSequence text = "Lista de doação vazia";
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0,0);
+            toast.show();
+        } else {
+            int cont = listView.getCount();
+            for (int i = 0; i < cont; i++) {
+                Alimento alimento = (Alimento) listView.getItemAtPosition(i);
+                if (alimento == null) {
+                    break;
+                }
+                RequestQueue queue = Volley.newRequestQueue(this);
+                String url = "http://192.168.15.12:8181/alimento/" + alimento.getId();
+                StringRequest stringRequest = new StringRequest(Request.Method.DELETE, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                tratarRespostaExcluirOK();
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                tratarErro(error.getMessage());
+                            }
+                        });
+                queue.add(stringRequest);
+            }
+
+            Context context = getApplicationContext();
+            CharSequence text = "Agradecemos sua Doação de Alimentos!";
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.show();
+
+            finish();
+        }
     }
 
     public void incluirAlimento(View v) {
@@ -178,28 +215,29 @@ public class DoacaoAlimentos extends AppCompatActivity {
         if (checked.size() == 0) {
             return;
         }
-        int position = checked.keyAt(0);
-        Alimento alimento = (Alimento) listView.getItemAtPosition(position);
-        if (alimento == null) {
-            return;
+        for (int i = 0; i < checked.size(); i++){
+            int position = checked.keyAt(i);
+            Alimento alimento = (Alimento) listView.getItemAtPosition(position);
+            if (alimento == null) {
+                break;
+            }
+            RequestQueue queue = Volley.newRequestQueue(this);
+            String url = "http://192.168.15.12:8181/alimento/" + alimento.getId();
+            StringRequest stringRequest = new StringRequest(Request.Method.DELETE, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            tratarRespostaExcluirOK();
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            tratarErro(error.getMessage());
+                        }
+                    });
+            queue.add(stringRequest);
         }
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://192.168.15.12:8181/alimento/" + alimento.getId();
-        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        tratarRespostaExcluirOK();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        tratarErro(error.getMessage());
-                    }
-                });
-        queue.add(stringRequest);
 
     }
 
