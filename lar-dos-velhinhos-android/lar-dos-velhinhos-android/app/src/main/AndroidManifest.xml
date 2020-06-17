@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.junior.lar">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_turtle"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_turtle_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".DoacaoMedicamentos"></activity>
+        <activity android:name=".DoacaoEPI" />
+        <activity android:name=".DoacaoAlimentos" />
+        <activity android:name=".MenuDoacao" />
+        <activity android:name=".Sobre" />
+        <activity android:name=".Doar" />
+        <activity android:name=".Estatistica" />
+        <activity android:name=".Visita" />
+        <activity android:name=".Menu" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

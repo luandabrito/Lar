@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BoasVindas">
+
+    <TextView
+        android:id="@+id/tituloText"
+        android:layout_width="193dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="casual"
+        android:text="Quem Somos"
+        android:textColor="#4CAF50"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:background="#8DBF8F"
+        android:onClick="tela2"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.906" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="341dp"
+        android:layout_height="530dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloText">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="Localizado no interior do estado de SP, o LVC – Lar dos Velhinhos de Campinas atende, em regime asilar, idosos de ambos os sexos em situação de vulnerabilidade social e sem a possibilidade de autocusteio. Trata-se de uma Organização da Sociedade Civil, sem fins lucrativos, administrada por uma diretoria voluntária e que conta com a colaboração da comunidade e algumas empresas parceiras para a sua manutenção.Por oferecer excelência no atendimento prestado, o LVC é referência nacional entre as Instituições de Longa Permanência. Sua infraestrutura ampla e acolhedora, localizada em uma área arborizada com mais de 70.000m², proporciona aos atendidos uma melhor qualidade de vida.O LVC possui Certificação CEBAS de Entidade Beneficente de Assistência Social, emitido pelo Ministério do Desenvolvimento Social de Combate à Fome – Secretaria Nacional de Assistência Social, registro no Conselho Municipal de Assistência Social de Campinas – CMAS. A entidade é declarada de utilidade pública pela Secretaria da Justiça e da Defesa da Cidadania do Estado de São Paulo pela Câmera Municipal de Campinas.  A história da Instituição é constituída por muita luta e generosidade, marcada pelo engajamento com o trabalho voluntário e pela solidariedade de cidadãos comuns e empresários da região que, preocupados com o bem-estar social, mantêm por 112 anos o Lar dos Velhinhos de Campinas.O ponto de partida se deu há pouco mais de um século, quando o jornalista Antônio Sarmento iniciou uma campanha na imprensa para que fosse criado um local de atendimento aos carentes em Campinas. A cidade crescia de forma desordenada, sem planejamento algum em âmbito social e urbano, e era crescente o número de desabrigados em condições sub-humanas pelas ruas da cidade.Após 5 anos promovendo debates e motivando a sociedade campineira a exigir uma solução, no dia 25 de julho de 1904, Dr. Paulo Machado Florence, então Delegado de Polícia, agiu reunindo um grupo de pessoas de expressão como Joaquim Villac, João de Paula Castro, Luiz José Pereira de Queiroz, Euclides Teixeira, Aristides Pompeu, Virginio Jacobsen e Padre Manuel Ribas D’Avila, para fundar o “Asylo de Mendigos”.Em 13 de agosto de 1905, na Câmara Municipal de Campinas, foi realizada uma assembleia geral para a eleição da primeira diretoria definitiva do local. Orosimbo Maia foi eleito como presidente, o qual se tornaria em 1907 o primeiro prefeito eleito de Campinas. Alberto Sarmento foi eleito como vice-presidente.  "
+            android:textColor="#000000" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

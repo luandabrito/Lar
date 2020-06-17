@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="produtos">
+        <item>Não selecionado</item>
+        <item>Fralda Geriátrica P</item>
+        <item>Fralda Geriátrica M</item>
+        <item>Fralda Geriátrica G</item>
+        <item>Luvas de Procedimento P</item>
+        <item>Luvas de Procedimento M</item>
+        <item>Luvas de Procedimento G</item>
+        <item>Pasta de Dente</item>
+        <item>Sabonete</item>
+        <item>Shampoo</item>
+        <item>Condicionador</item>
+        <item>Aparelho de Barbear Descartável</item>
+        <item>Desodorante</item>
+    </string-array>
+</resources>

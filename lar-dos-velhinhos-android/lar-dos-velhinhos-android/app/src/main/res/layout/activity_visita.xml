@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Visita">
+
+    <TextView
+        android:id="@+id/descricaoText"
+        android:layout_width="358dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="16dp"
+        android:text="Aqui você pode reservar um horário para nos visitar. Basta dizer seu nome, seu e-mail, um número para contato e o dia da semana que você tem disponibilidade que entraremos em contato para agendar a sua visita."
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/visitaText"
+        tools:text="Aqui você pode reservar um horário para nos visitar. Basta dizer seu nome, seu e-mail, um número para contato e o dia da semana que você tem disponibilidade que entraremos em contato para agendar a sua visita." />
+
+    <Spinner
+        android:id="@+id/spinnerDiaSemana"
+        android:layout_width="231dp"
+        android:layout_height="39dp"
+        android:entries="@array/diaSemana"
+        app:layout_constraintStart_toStartOf="@+id/textDiaSemana"
+        app:layout_constraintTop_toBottomOf="@+id/textDiaSemana" />
+
+    <TextView
+        android:id="@+id/textNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Seu nome completo"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/descricaoText"
+        app:layout_constraintTop_toBottomOf="@+id/descricaoText"
+        tools:text="Seu nome completo" />
+
+    <TextView
+        android:id="@+id/textEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="E-mail"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/editNomeText"
+        app:layout_constraintTop_toBottomOf="@+id/editNomeText" />
+
+    <TextView
+        android:id="@+id/visitaText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Visite-nos"
+        android:textColor="#179E0F"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Visite-nos" />
+
+    <EditText
+        android:id="@+id/editNomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nome Completo"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/textNome"
+        app:layout_constraintTop_toBottomOf="@+id/textNome" />
+
+    <TextView
+        android:id="@+id/textTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Telefone para contato"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/editEmailText"
+        app:layout_constraintTop_toBottomOf="@+id/editEmailText" />
+
+    <TextView
+        android:id="@+id/textDiaSemana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Dia da semana de interesse"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/editTelefoneText"
+        app:layout_constraintTop_toBottomOf="@+id/editTelefoneText" />
+
+    <Button
+        android:id="@+id/buttonInteresse"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:background="#8DBF8F"
+        android:onClick="notificationAction"
+        android:text="Tenho Interesse"
+        app:layout_constraintStart_toStartOf="@+id/spinnerDiaSemana"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDiaSemana" />
+
+    <Button
+        android:id="@+id/buttonLimpar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:background="#8DBF8F"
+        android:onClick="limpar"
+        android:text="Limpar"
+        app:layout_constraintStart_toEndOf="@+id/buttonInteresse"
+        app:layout_constraintTop_toTopOf="@+id/buttonInteresse" />
+
+    <EditText
+        android:id="@+id/editTelefoneText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="(00) 00000-0000"
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="@+id/textTelefone"
+        app:layout_constraintTop_toBottomOf="@+id/textTelefone" />
+
+    <EditText
+        android:id="@+id/editEmailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/textEmail"
+        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+
+    <Button
+        android:id="@+id/buttonVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#8DBF8F"
+        android:onClick="voltar"
+        android:text="Voltar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInteresse" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

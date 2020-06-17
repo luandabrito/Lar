@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="medicamentos">
+        <item>Não selecionado</item>
+        <item>AAS - 100mg</item>
+        <item>Alenia</item>
+        <item>Allegra - 120mg</item>
+        <item>Atrovent</item>
+        <item>Buscopam</item>
+        <item>Calcio - 500mg + Vit D3 400ui</item>
+        <item>Cefalexina</item>
+        <item>Cefpriaxona</item>
+        <item>Cimetidina</item>
+        <item>Cloroquina</item>
+        <item>Dipirona - 500mg</item>
+        <item>Dorflex</item>
+        <item>Enalapril</item>
+        <item>Glifage XR - 500mg</item>
+        <item>Hidroxicloroquina</item>
+        <item>Imosec</item>
+        <item>Paracetamol - 250mg</item>
+        <item>Paracetamol - 500mg</item>
+        <item>Plasil</item>
+        <item>Prednisona</item>
+        <item>Prolopa</item>
+        <item>Simeticona</item>
+        <item>Torsilax</item>
+    </string-array>
+</resources>
