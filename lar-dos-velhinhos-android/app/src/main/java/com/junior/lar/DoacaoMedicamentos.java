@@ -30,6 +30,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoacaoMedicamentos extends AppCompatActivity {
+    private int contador = 0;
+
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +70,7 @@ public class DoacaoMedicamentos extends AppCompatActivity {
             toast.setGravity(Gravity.CENTER_VERTICAL, 0,0);
             toast.show();
         } else {
+            contador++;
             int cont = listView.getCount();
             for (int i = 0; i < cont; i++) {
                 Medicamento medicamento = (Medicamento) listView.getItemAtPosition(i);
@@ -162,7 +173,7 @@ public class DoacaoMedicamentos extends AppCompatActivity {
 
     public void requisitarDados(View v) {
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://192.168.15.12:8181/medicamentos";
+        String url ="http://192.168.1.11:8181/medicamentos";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override

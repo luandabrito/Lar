@@ -10,98 +10,109 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:text="Selecione o item e a quantidade"
+        android:textColor="#070707"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerNome"
-        android:layout_width="176dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="204dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="8dp"
         android:entries="@array/roupas"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerQuantidade"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <Spinner
         android:id="@+id/spinnerQuantidade"
-        android:layout_width="142dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="122dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="12dp"
         android:entries="@array/quantidade"
+        app:layout_constraintBottom_toTopOf="@+id/Incluir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.638"
-        app:layout_constraintStart_toEndOf="@+id/spinnerNome"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.727" />
+
 
     <Button
         android:id="@+id/Incluir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:onClick="incluirRoupa"
         android:text="Incluir item na Lista"
+        android:background="#8DBF8F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerQuantidade" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerNome" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Lista de doação"
+        android:layout_marginTop="16dp"
+        android:text="Sua lista de doação:"
+        android:textColor="#070707"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Incluir" />
 
     <ListView
         android:id="@+id/listaRoupas"
-        android:layout_width="309dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="312dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/Remover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="#8DBF8F"
         android:onClick="excluir"
         android:text="Remover Item"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listaRoupas" />
+        app:layout_constraintBottom_toTopOf="@+id/voltar"
+        app:layout_constraintEnd_toStartOf="@+id/confirmar"
+        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/confirmar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="16dp"
+        android:background="#8DBF8F"
         android:onClick="confirmarDoacao"
         android:text="Confirmar Doação"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/Remover"
-        app:layout_constraintTop_toBottomOf="@+id/listaRoupas" />
+        app:layout_constraintBottom_toTopOf="@+id/voltar"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/voltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="#8DBF8F"
         android:onClick="voltar"
         android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmar" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
